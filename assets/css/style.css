@@ -1,0 +1,172 @@
+body{
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 18px;
+	line-height: 1.6;
+	color: #333;
+}
+*,
+*:before,
+*:after{
+	box-sizing: border-box;
+}
+/*сбрасываем высоту заголовков*/
+h1, h2, h3, h4, h5, h6{
+	margin: 0;
+}
+
+
+/*container*/
+.container{
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/*intro*/
+.intro{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+	
+	background: url("../images/intro.jpg") center no-repeat;
+	-webkit-background-size: cover;
+	/*растягиваем картинку на весь экран*/
+	background-size: cover;
+}
+
+.intro_inner {
+	color: #FA8072;
+	width: 100%;
+	max-width: 880px;
+	margin: 0 auto;
+	
+	text-align: center;
+}
+
+.intro_title {
+	font-size: 100px;
+	font-weight: 700;
+	text-transform: uppercase;
+	
+	line-height: 1;
+	/*my changes*/
+	
+}
+
+/*делаем полоску*/
+.intro:after {
+	content: "";
+	display: block;
+	width: 60px;
+	height: 3px;
+	margin: 60px auto 0;
+	
+	background-color: #FA8072;
+}
+
+.intro_suptitle {
+	
+	margin-bottom: 20px;
+	
+	font-family: 'Caveat', cursive;
+	font-size: 72px;
+	color: #FA8072;
+	text-align: center;
+}
+
+/*header*/
+.header {
+	width: 100%;
+	/*верхний отступ шапки*/
+	padding-top: 30px;
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+}
+
+/*позиционируем ссылки*/
+.header_inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header_logo{
+	font-size: 30px;
+	font-weight: 700;
+	color: #FA8072;
+}
+
+/*nav*/
+.nav{
+	font-size: 14px;
+	text-transform: uppercase;
+	
+}
+
+.nav_link {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 15px;
+	/*родитель для полоски*/
+	position: relative;
+	
+	color: #FA8072;
+	/*убираем нижнее подчёркивание*/
+	text-decoration: none;
+	/*задержка для плавности*/
+	transition: color .1s linear;
+	font-weight: bolder;
+}
+
+/*после наведения курсора показываем полоску (псевдоэлементы), в родителе*/
+.nav_link:after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 3px;
+	
+	
+	
+	background-color: #fce38a;
+	/*не показываем всё время только принаводе*/
+	opacity: 0;
+	
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1;
+	transition:  opacity 0.1s linear;
+}
+
+/*поведение при наведении курсора меняем цвет ссылки*/
+.nav_link:hover {
+	color: #fce38a;
+}
+
+/*при наводе делаем полоску не прозрачной с задержкой*/
+.nav_link:hover:after{
+	opacity: 1;
+}
+
+/*Button*/
+.btn {
+	display: inline-block;
+	vertical-align: top;
+	padding: 8px 30px;
+	
+	border: 3px solid #FA8072;
+	
+	font-size: 14px;
+	font-weight: 700;
+	color: #FA8072;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
